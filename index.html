@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="utf-8">
+  <title>娃娃机</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="msapplication-tap-highlight" content="no">
+  <script src="js/jquery-1.8.3.min.js"></script>
+  <link rel="stylesheet" href="./css/style.css" />
+  <script>
+    if (/Android (\d+\.\d+)/.test(navigator.userAgent)) {
+            if (parseFloat(RegExp.$1) > 2.3) {
+                var phoneScale = parseInt(window.screen.width) / 640;
+                document.write('<meta name="viewport" content="width=640, minimum-scale=' + phoneScale +
+                    ', maximum-scale=' + phoneScale + ', target-densitydpi=device-dpi" />');
+            } else {
+                document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi" />');
+            }
+        } else {
+            document.write(
+                '<meta name="viewport" content="width=640,user-scalable=no, target-densitydpi=device-dpi" />');
+        }
+    </script>
+</head>
+
+<body>
+  <div class="page-portrait" id="page-portrait">
+    <div id="pageContainer" class="page-container game-box">
+      <div class="poster-main">
+        <ul class="poster-list">
+          <li class="item lw1"><img src="images/dx-lw1.png" alt=""></li>
+          <li class="item lw2"><img src="images/dx-lw2.png" alt=""></li>
+          <li class="item lw3"><img src="images/dx-lw3.png" alt=""></li>
+          <li class="item lw4"><img src="images/dx-lw4.png" alt=""></li>
+          <li class="item lw5"><img src="images/dx-lw5.png" alt=""></li>
+          <li class="item lw6"><img src="images/dx-lw6.png" alt=""></li>
+        </ul>
+      </div>
+      <div id="stop" class="button"></div>
+      <div id="left" class="left-btn"></div>
+      <div id="right" class="right-btn"></div>
+      <div class="zhua-top">
+        <span class="zhua-zuo"></span>
+        <span class="zhua-zhu"></span>
+        <div class="zhua zhuamove"></div>
+      </div>
+    </div>
+  </div>
+  <script src="./js/carousel.js"></script>
+  <script>
+    Carousel.init();
+  </script>
+</body>
+
+</html>
